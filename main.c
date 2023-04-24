@@ -5,6 +5,8 @@
 /**
  * main - Entry point
  *
+ * joint team between akpovwovwo and uchechukwu
+ * perfectly done
  * Return: Always 0
  */
 int main(void)
