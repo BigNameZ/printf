@@ -2,15 +2,17 @@
 
 /**
  * get_precision - Calculates the precision for printing
+ * joint team between akpovwovwo and uchechukwu
+ * perfectly done
  * @format: Formatted string in which to print the arguments
  * @i: List of arguments to be printed.
  * @list: lists of argument
  *
  * Return: Precision.
  */
-int get_precision(const char *format, int *i, va_list list)
+int get_precision(const char *format, int *v, va_list list)
 {
-	int curr_i = *i + 1;
+	int curr_i = *v + 1;
 	int precision = -1;
 
 	if (format[curr_i] != '.')
@@ -35,7 +37,7 @@ int get_precision(const char *format, int *i, va_list list)
 			break;
 	}
 
-	*i = curr_i - 1;
+	*v = curr_i - 1;
 
 	return (precision);
 }
