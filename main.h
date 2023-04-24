@@ -20,6 +20,8 @@
 
 /**
  * struct fmt - Struct op
+ * joint team between akpovwovwo and uchechukwu
+ * perfectly done
  *
  * @fmt: The format.
  * @fn: The function associated.
@@ -35,6 +37,8 @@ struct fmt
  * typedef struct fmt fmt_t - Struct op
  *
  * @fmt: The format.
+ * joint team between akpovwovwo and uchechukwu
+ * perfectly done
  * @fm_t: The function associated.
  */
 typedef struct fmt fmt_t;
