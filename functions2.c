@@ -2,16 +2,18 @@
 
 /****************** PRINT POINTER ******************/
 /**
- * print_pointer - Print the value of a pointer variable
- * joint team between akpovwovwo and uchechukwu
+ * print_pointer - Prints the value of a pointer variable
+ * its a joint project between akpovwovwo and uchechukwu
  * perfectly done
  * @types: List a of arguments
  * @buffer: Buffer array to handle print
- * @flags:  Calculate active flags
+ * @flags:  Calculates active flags
  * @width: get width
  * @precision: Precision specification
  * @size: Size specifier
  * Return: Number of chars printed.
+ * its a joint project between akpovwovwo and uchechukwu
+ * perfectly done
  */
 int print_pointer(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
@@ -49,7 +51,7 @@ int print_pointer(va_list types, char buffer[],
 
 	ind++;
 
-	/*return (write(1, &buffer[v], BUFF_SIZE - v - 1));*/
+	/*return (write(1, &buffer[i], BUFF_SIZE - i - 1));*/
 	return (write_pointer(buffer, ind, length,
 		width, flags, padd, extra_c, padd_start));
 }
@@ -57,20 +59,22 @@ int print_pointer(va_list types, char buffer[],
 /************************* PRINT NON PRINTABLE *************************/
 /**
  * print_non_printable - Prints ascii codes in hexa of non printable chars
- * @types: Lista of argument
- * joint team between akpovwovwo and uchechukwu
+ * its a joint project between akpovwovwo and uchechukwu
  * perfectly done
+ * @types: Lista of arguments
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
  * @width: get width
  * @precision: Precision specification
  * @size: Size specifier
  * Return: Number of chars printed
+ * its a joint project between akpovwovwo and uchechukwu
+ * perfectly done
  */
 int print_non_printable(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
-	int v = 0, offset = 0;
+	int i = 0, offset = 0;
 	char *str = va_arg(types, char *);
 
 	UNUSED(flags);
@@ -81,40 +85,42 @@ int print_non_printable(va_list types, char buffer[],
 	if (str == NULL)
 		return (write(1, "(null)", 6));
 
-	while (str[v] != '\0')
+	while (str[i] != '\0')
 	{
-		if (is_printable(str[v]))
-			buffer[v + offset] = str[v];
+		if (is_printable(str[i]))
+			buffer[i + offset] = str[i];
 		else
-			offset += append_hexa_code(str[v], buffer, v + offset);
+			offset += append_hexa_code(str[i], buffer, i + offset);
 
-		v++;
+		i++;
 	}
 
-	buffer[v + offset] = '\0';
+	buffer[i + offset] = '\0';
 
-	return (write(1, buffer, v + offset));
+	return (write(1, buffer, i + offset));
 }
 
 /************************* PRINT REVERSE *************************/
 /**
  * print_reverse - Prints reverse string.
- * joint team between akpovwovwo and uchechukwu
+ * its a joint project between akpovwovwo and uchechukwu
  * perfectly done
  * @types: Lista of arguments
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
  * @width: get width
  * @precision: Precision specification
- * @size: Size specifiers
+ * @size: Size specifier
  * Return: Numbers of chars printed
+ * its a joint project between akpovwovwo and uchechukwu
+ * perfectly done
  */
 
 int print_reverse(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	char *str;
-	int v, count = 0;
+	int i, count = 0;
 
 	UNUSED(buffer);
 	UNUSED(flags);
@@ -129,12 +135,12 @@ int print_reverse(va_list types, char buffer[],
 
 		str = ")Null(";
 	}
-	for (v = 0; str[v]; v++)
+	for (i = 0; str[i]; i++)
 		;
 
-	for (v = v - 1; v >= 0; v--)
+	for (i = i - 1; i >= 0; i--)
 	{
-		char z = str[v];
+		char z = str[i];
 
 		write(1, &z, 1);
 		count++;
@@ -144,22 +150,24 @@ int print_reverse(va_list types, char buffer[],
 /************************* PRINT A STRING IN ROT13 *************************/
 /**
  * print_rot13string - Print a string in rot13.
- * joint team between akpovwovwo and uchechukwu
+ * its a joint project between akpovwovwo and uchechukwu
  * perfectly done
  * @types: Lista of arguments
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
  * @width: get width
  * @precision: Precision specification
- * @size: Size specifiers
+ * @size: Size specifier
  * Return: Numbers of chars printed
+ * its a joint project between akpovwovwo and uchechukwu
+ * perfectly done
  */
 int print_rot13string(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	char x;
 	char *str;
-	unsigned int v, j;
+	unsigned int i, j;
 	int count = 0;
 	char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char out[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
@@ -173,11 +181,11 @@ int print_rot13string(va_list types, char buffer[],
 
 	if (str == NULL)
 		str = "(AHYY)";
-	for (v = 0; str[v]; v++)
+	for (i = 0; str[i]; i++)
 	{
 		for (j = 0; in[j]; j++)
 		{
-			if (in[j] == str[v])
+			if (in[j] == str[i])
 			{
 				x = out[j];
 				write(1, &x, 1);
@@ -187,7 +195,7 @@ int print_rot13string(va_list types, char buffer[],
 		}
 		if (!in[j])
 		{
-			x = str[v];
+			x = str[i];
 			write(1, &x, 1);
 			count++;
 		}
