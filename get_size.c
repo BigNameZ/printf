@@ -1,17 +1,19 @@
 #include "main.h"
 
 /**
- * get_size - Calculate the size to cast the argument
- * joint team between akpovwovwo and uchechukwu
+ * get_size - Calculates the size to cast the argument
+ * its a joint project between akpovwovwo and uchechukwu
  * perfectly done
- * @format: Formatted strings in which to print the arguments
+ * @format: Formatted string in which to print the arguments
  * @i: List of arguments to be printed.
+ * its a joint project between akpovwovwo and uchechukwu
+ * perfectly done
  *
  * Return: Precision.
  */
-int get_size(const char *format, int *v)
+int get_size(const char *format, int *i)
 {
-	int curr_i = *v + 1;
+	int curr_i = *i + 1;
 	int size = 0;
 
 	if (format[curr_i] == 'l')
@@ -20,9 +22,9 @@ int get_size(const char *format, int *v)
 		size = S_SHORT;
 
 	if (size == 0)
-		*v = curr_i - 1;
+		*i = curr_i - 1;
 	else
-		*v = curr_i;
+		*i = curr_i;
 
 	return (size);
 }
